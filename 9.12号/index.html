@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>duixiang</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+     function Student(name,age,sex){
+     	this.name=name;
+     	this.age=age;
+     	this.sex=sex;
+     	this.say=function(){
+               alert(1);
+     	}
+     }
+     let zhangsan=new Student('zhangsan',18,'nan');
+     let lisi=new Student('lisi',20,'nv');
+     let wangwu=new Student('wangwu',25,'nv');
+     console.log(zhangsan);
+     console.log(lisi);
+     console.log(wangwu);
+     function iphone(brand,color,size,price){
+     	this.brand=brand;
+     	this.color=color;
+     	this.size=size;
+     	this.price=price;
+     	this.calls=function(){
+     		alert('打电话');
+     	}
+     }
+     let iphone8=new iphone('iphone8','red',5.5,8000);
+     /*for in*/
+     // console.log(iphone8);
+    /* alert(iphone8.size);*/
+     /*alert(iphone8['size']);
+     for(let i in iphone8){
+     	console.log(`${i}----${iphone8[i]}`);
+     }*/
+     /*
+     json
+      */
+     // 什么   值
+     /*let wangmazi={
+     	'age' :18,
+     	'sex' :'nan',
+     	'name':'wangmazi',
+     	say:function(){
+     		alert(1)
+     	}
+     };
+     console.log(wangmazi);
+     wangmazi.say();*/
+     /*
+     通过类创建对象
+      */
+  /*   class student{
+     	constructor(){
+     		this.name='zhangsan';
+     		this.age=18;
+     		this.say=function(){
+     			alert(1);
+     		}
+     	}
+     	study(){
+     		alert('学习');
+     	}
+     	play(){
+     		alert('玩');
+     	}
+     }
+     let zhangsan=new student();
+     console.log(zhangsan);
+     zhangsan.study();
+     class iphone{
+     	constructor(){
+     		this.brand='iphone8';
+     		this.color='red';
+     		this.size=5.5;
+     		this.price=8000;
+     	}
+     	call(){
+     		alert(this.brand);
+     	}
+     }
+     let iphone8=new iphone;
+    for(let i in iphone8){
+    	console.log(`${i}-----${iphone8[i]}`)
+    }
+    iphone8.call();*/
+</script>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>prototype</title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+/*	function Person(name,age,sex){
+		this.name=name;
+		this.age=age;
+		this.sex=sex;
+		this.brain=`${this.name}脑子`;
+	}*/
+	/*var arr=new Array('a','b','c','d');
+	console.log(arr);*/
+	let arr=new Myarray(11,23,15,40,1,2,3,4,5,6);
+	
+	 // arr.push('x','y','z');
+	 // console.log(arr);
+    /* arr.lastinDexof(4);
+	console.log(arr.lastinDexof(4));*/
+/*	var result=arr.some(function(value){
+		return typeof value=='number';
+	})
+	console.log(result);
+	var result=arr.every(function(value){
+		return typeof value=='number';
+	})
+	console.log(result);
+	var result1=arr.map(function(value){
+		return value*2;
+	})
+	console.log(result1);
+	var result1=arr.filter(function(value){
+		return value%2==0;
+	})
+	console.log(result1);
+	arr.reverse();
+	console.log(arr.reverse());
+	arr.sort();
+	console.log(arr.sort());
+	arr.join();
+	console.log(arr.join());
+	console.log(arr.max());*/
+	console.log(arr.spliceCancel(2,2));
+	console.log(arr.spliceAdd(2,'l','s','h'));
+	function Myarray(){
+		for(let i=0;i<arguments.length;i++){
+			this[i]=arguments[i];
+		}
+		this.length=arguments.length;
+		this.push=function(){
+		for(let i=0;i<arguments.length;i++){
+			this[this.length]=arguments[i];
+			this.length++;
+		       }
+	    }
+	    this.inDexof=function(value){
+	    	for(let i=0;i<this.length;i++){
+	    		if(this[i]==value){
+	    			return i;
+	    		}
+	    	}
+	    }
+	    this.lastinDexof=function(value){
+	    	for(let i=this.length-1;i>=0;i--){
+	    		if(this[i]==value){
+	    			return i;
+	    		}
+	    	}
+	    }
+	    this.some=function(fn){
+	    	for(let i=0;i<this.length;i++){
+	    		if(fn(this[i])){
+	    			return true;
+	    		}
+	    	}
+	    	return false;
+	    }
+	    this.every=function(fn){
+	    	for(let i=0;i<this.length;i++){
+	    		if(!(fn(this[i]))){
+	    			return false;
+	    		}
+	    	}
+	    	return true;
+	    }
+	    this.map=function(fn){
+	    	var newarr=[];
+	    	for(let i=0;i<this.length;i++){
+	    			newarr[newarr.length]=fn(this[i]);
+	    	}
+	    	return newarr;
+	    }
+	    this.filter=function(fn){
+	    	var newarr=[];
+	    	for(let i=0;i<this.length;i++){
+	    			if(fn(this[i])){
+	    				newarr[newarr.length]=this[i];
+	    			}
+	    	}
+	    	return newarr;
+	    }
+	    this.reverse=function(){
+	    	var newarr=[];
+	    	for(let i=this.length-1;i>=0;i--){
+	    		newarr[newarr.length]=this[i];
+	    	}
+	    	return newarr;
+	    }
+	    this.sort=function(){
+	    	for(var i=0;i<this.length;i++){
+	    		for(var j=i+1;j<this.length;j++){
+	    			if(this[i]<this[j]){
+	    				var k=this[i];
+	    				this[i]=this[j];
+	    				this[j]=k;
+	    			}
+	    		}
+	    	}
+	    	return this;
+	    }
+	    this.join=function(str){
+	    	str=str==undefined?'-':str
+	    	var result='';
+	    	for(var i=0;i<this.length;i++){
+	    		if(i<this.length-1){
+	    			result=this[i]+str+result;
+	    		}else{
+	    			result=result+this[i];
+	    		}
+	    	}
+	    	return result;
+	    }
+	    this.max=function(){
+	    	var max=[0];
+	    	for(var i=0;i<this.length;i++){
+	    		if(max<this[i]){
+	    			max=this[i];
+	    		}
+	    	}
+	    	return max;
+	    }
+	    this.spliceCancel=function(pos,num){
+	    	var newarr=[];
+		for(var i=0;i<arr.length;i++){
+			if(i>=pos && i<pos+num){
+				continue;
+			}
+			newarr[newarr.length]=arr[i];
+		}
+		return newarr;
+	    }
+	    this.spliceAdd=function(pos,...rest){
+	    	var newarr=[];
+		for(var i=0;i<pos;i++){
+              newarr[newarr.length]=arr[i];
+		}
+		for(var i=0;i<rest.length;i++){
+			newarr[newarr.length]=rest[i];
+		}
+		for(var i=pos;i<arr.length;i++){
+			newarr[newarr.length]=arr[i];
+		}
+		return newarr;
+	    }
+	}
+	
+</script>
